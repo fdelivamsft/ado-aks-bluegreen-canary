@@ -1,4 +1,4 @@
-# Guide to "blue-green" and "canary" deployments using GitHub Actions
+# Guide to "blue-green" and "canary" deployments using Azure Pipelines
 
 ## What is Blue/Green deployment strategy in Kubernetes?
 | ![blue-green-deploy-process](https://github.com/gauravthakur02/action-deployments/blob/2c3e03a0bc9503d87dbcf17606b6cdd377c77925/img/blue-green-deployment-process.gif) |
@@ -142,7 +142,7 @@ spec:
   type: LoadBalancer
 ```
 ---
-3. **Create GitHub Actions workflow in `/.github/workflows`:**
+3. **Create Azure Pipeline based on the following YAML:**
 * For Blue/Green deployment, create `blue-green.yaml` file:
 ```yml
 # This is a basic workflow to help you get started with Actions
