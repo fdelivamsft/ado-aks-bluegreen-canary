@@ -1,20 +1,20 @@
-# Guide to "blue-green" and "canary" deployments using Azure Pipelines
+# Guide to "blue-green" deployments using Azure Pipelines
 
-## What is Blue/Green deployment strategy in Kubernetes?
+## What is Blue/Green deployment strategy?
 | ![blue-green-deploy-process](https://raw.githubusercontent.com/fdelivamsft/ado-aks-bluegreen-canary/main/img/blue-green-deployment-process.gif) |
 | :--: |
 | *Blue/Green Deployment* |
 >Blue/Green deployments are a form of progressive delivery where a new version of the application is deployed while the old version still exists. The two versions coexist for a brief period of time while user traffic is routed to the new version, before the old version is discarded (if all goes well).
 
 ---
-## What is Canary deployment strategy in Kubernetes?
+## What is Canary deployment strategy?
 | ![canary-deploy-process](https://raw.githubusercontent.com/fdelivamsft/ado-aks-bluegreen-canary/main/img/canary-deploy.gif) |
 | :--: |
 | *Canary Deployment* |
 >Canary deployment strategy involves deploying new versions of an application next to stable production versions to see how the canary version compares against the baseline before promoting or rejecting the deployment. 
 
 ---
-### **This is a simple tutorial on how to do [Blue/Green Deployment] and [Canary Deployment] in Azure Pipeline using Key Vault as blue/green repository.**
+### **This is a simple tutorial on how to do [Blue/Green Deployment] in Azure Pipeline using Key Vault as blue/green repository.**
 
 ## Prerequisites
 * Create a project in Azure DevOps
