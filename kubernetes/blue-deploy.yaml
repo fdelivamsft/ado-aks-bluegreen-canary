@@ -15,20 +15,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: nginx-deployment-b
 spec:
-  replicas: 3
+  replicas: 1
   selector:
       matchLabels:
-        app: nginx
+        app: nginx-b
   template:
     metadata:
       labels:
-        app: nginx
+        app: nginx-b
     spec:
       containers: 
-        - name: nginx
-          image: demogaurav.azurecr.io/blue-nginx:1
+        - name: nginx-b
+          image: bluegreendeploymentdemo.azurecr.io/blue-nginx:1
           ports:
             - name: http
               containerPort: 80

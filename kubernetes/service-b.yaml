@@ -12,30 +12,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: nginx-deployment-g
+apiVersion: v1
+kind: Service
+metadata: 
+  name: nginx-b
+  labels: 
+    app: nginx
 spec:
-  replicas: 1
-  selector:
-      matchLabels:
-        app: nginx-g
-  template:
-    metadata:
-      labels:
-        app: nginx-g
-    spec:
-      containers: 
-        - name: nginx-g
-          image: bluegreendeploymentdemo.azurecr.io/green-nginx:1
-          ports:
-            - name: http
-              containerPort: 80
-          resources:
-            requests:
-              cpu: 200m
-              memory: 200Mi
-            limits:
-              cpu: 500m
-              memory: 500Mi
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
+  selector: 
+    app: nginx-b
+  type: LoadBalancer
